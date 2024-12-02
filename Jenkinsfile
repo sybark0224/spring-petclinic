@@ -5,6 +5,9 @@ pipeline {
     jdk 'jdk17'
     maven 'M3'
   }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('dockerCredentials')
+  }
 
   stages {
   //GitHub에서 
