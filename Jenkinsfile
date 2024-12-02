@@ -10,7 +10,7 @@ pipeline {
   //GitHub에서 
     stage('Git Clone') {
       steps {
-        git url: 'https://github.com/sybark0224/spring-petclinic/new/main.git', branch: 'main'  
+        git url: 'https://github.com/sybark0224/spring-petclinic.git', branch: 'main'  
       }
   
     }
