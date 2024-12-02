@@ -28,7 +28,16 @@ pipeline {
           """
         }
       }
-    }  
+    }
+    stage('Docker Image Push') {
+      step {
+        sh """
+        echo $DOCKERHUB_CREDENTIALS_PSW |docker login -u $DOCKERHUB__CREDENTIALS_USR --password-stdin
+        docker push ychpark/spring-petclinic:latest
+        """
+      }
+    }
+    
   }
 }        
         
