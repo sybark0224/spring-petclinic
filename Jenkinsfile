@@ -15,19 +15,7 @@ stages {
   
   }
 
- stage (Maven Build') {
-    
 
-  }
-  stage ('Docker Image') {
-
-  }
-  stage ('Docker Image Push') {
-
-  }
-  stage ('SSH Publish') {
-
-  }
         
   }
 }        
