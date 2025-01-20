@@ -6,9 +6,9 @@ pipeline {
     maven 'M3'
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerCredentials')
-    AWS_CREDENTIAL = credentials('AWSCredential')
-    GIT_CREDENTIAL = credentials('gitCredential')
+    DOCKERHUB_CREDENTIALS = credentials('dockerCredential')
+    AWS_CREDENTIALS = credentials('AWSCredential')
+    GIT_CREDENTIALS = credentials('gitCredential')
     REGION = 'ap-northest-2'
   }
 
@@ -17,7 +17,7 @@ pipeline {
       steps {
         echo 'Git Clone'
         git url: 'https://github.com/sybark0224/spring-petclinic.git',
-          branch: 'main', credentialIdL: 'GIT_CREDENTIAL'
+          branch: 'main', credentialId: 'GIT_CREDENTIALS'
       }
     }
 
