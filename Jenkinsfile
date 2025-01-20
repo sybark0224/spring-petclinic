@@ -22,7 +22,7 @@ pipeline {
     }
     //Maven 빌드작업
     stage('MavenBuild') {
-      step {
+      steps {
         echo 'Maven Build'
         sh 'mvn -Dmaven.test.failure.ignore-true clean package'
       }
