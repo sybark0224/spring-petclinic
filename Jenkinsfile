@@ -37,8 +37,8 @@ pipeline {
         echo 'Docker Image build'                
         dir("${env.WORKSPACE}") {
           sh """
-          docker build -t s4616/spring-petclinic:$BUILD_NUMBER .
-          docker tag s4616/spring-petclinic:$BUILD_NUMBER s4616/spring-petclinic:latest
+          docker build -t ychpark/spring-petclinic:$BUILD_NUMBER .
+          docker tag ychpark/spring-petclinic:$BUILD_NUMBER ychpark/spring-petclinic:latest
           """
         }
       }
@@ -58,8 +58,8 @@ pipeline {
     stage('Remove Docker Image') { 
       steps {
         sh """
-        docker rmi s4616/spring-petclinic:$BUILD_NUMBER
-        docker rmi s4616/spring-petclinic:latest
+        docker rmi ychpark/spring-petclinic:$BUILD_NUMBER
+        docker rmi ychpark/spring-petclinic:latest
         """
       }
     }
