@@ -33,9 +33,9 @@ pipeline {
       steps {
         echo 'Docker Image build'
         dir("${env.WORKSPACE}") {
-          sh """  <sybark0224>/spring
+          sh """
           docker build -t ychpark/spring-petclinic:$BUILD_NUMBER .
-          docker tag ychpark/spring-petclinic:$BUILD_NUMBER m7098/spring-petclinic:latest
+          docker tag ychpark/spring-petclinic:$BUILD_NUMBER ychpark/spring-petclinic:latest
           """
         }
       }
@@ -47,7 +47,7 @@ pipeline {
     steps {
       sh """
       echo $DOCKERHUB_ CREDENTIAL_PSW | docker login -u $DOCKERHUB_CREDENTIAL_USR --password-sdin
-      docker push sybark0224/spring-petclinic:latest
+      docker push ychpark/spring-petclinic:latest
       """
     }
   }        
